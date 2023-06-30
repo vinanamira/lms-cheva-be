@@ -1,0 +1,1 @@
+"# lms-cheva"  initgit add README.mdgit commit -m "first commit"git branch -M maingit remote add origin https://github.com/vinanamira/lms-cheva.gitgit push -u origin main
