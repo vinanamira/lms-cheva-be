@@ -14,10 +14,6 @@ class FileMateriController extends Controller
         return response()->json($fileMateris);
     }
 
-    public function create()
-    {
-        //
-    }
 
     // Menyimpan data file materi baru
     public function store(Request $request)
@@ -43,10 +39,6 @@ class FileMateriController extends Controller
         return response()->json($fileMateri);
     }
 
-    public function edit(FileMateri $fileMateri)
-    {
-        //
-    }
 
     // Mengupdate data file materi berdasarkan ID
     public function update(Request $request, FileMateri $id)

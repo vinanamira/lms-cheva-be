@@ -14,10 +14,6 @@ class MateriController extends Controller
         return response()->json($materi);
     }
 
-    public function create()
-    {
-        //
-    }
 
     // Menyimpan data materi baru
     public function store(Request $request)
@@ -43,10 +39,6 @@ class MateriController extends Controller
         return response()->json($materi);
     }
 
-    public function edit(Materi $materi)
-    {
-        //
-    }
 
     // Mengupdate data materi berdasarkan ID
     public function update(Request $request, Materi $id)

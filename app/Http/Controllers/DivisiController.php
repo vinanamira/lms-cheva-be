@@ -7,18 +7,15 @@ use Illuminate\Http\Request;
 
 class DivisiController extends Controller
 {
+    // Menampilkan semua data file
     public function index()
     {
         $divisis = Divisi::all();
         return response()->json($divisis);
     }
 
- 
-    public function create()
-    {
-        //
-    }
 
+    // Menyimpan data file baru
     public function store(Request $request)
     {
         $divisi = new Divisi();
@@ -30,6 +27,7 @@ class DivisiController extends Controller
     return response()->json(['message' => 'Divisi created successfully']);
     }
  
+    // Menampilkan data file berdasarkan ID
     public function show(Divisi $id)
     {
         $divisi = Divisi::find($id);
@@ -40,12 +38,8 @@ class DivisiController extends Controller
 
     return response()->json($divisi);
     }
-  
-    public function edit(Divisi $divisi)
-    {
-        //
-    }
 
+    // Mengupdate data file berdasarkan ID
     public function update(Request $request, Divisi $id)
     {
         $divisi = Divisi::find($id);
@@ -63,7 +57,7 @@ class DivisiController extends Controller
         return response()->json(['message' => 'Divisi updated successfully']);
     }
 
-    
+    // Menghapus data file berdasarkan ID
     public function destroy(Divisi $id)
     {
         $divisi = Divisi::find($id);

@@ -14,10 +14,6 @@ class PengumpulanController extends Controller
         return response()->json($pengumpulans);
     }
 
-    public function create()
-    {
-        //
-    }
 
     // Menyimpan data pengumpulan baru
     public function store(Request $request)
@@ -43,10 +39,6 @@ class PengumpulanController extends Controller
         return response()->json($pengumpulan);
     }
 
-    public function edit(Pengumpulan $pengumpulan)
-    {
-        //
-    }
 
     // Mengupdate data pengumpulan berdasarkan ID
     public function update(Request $request, Pengumpulan $id)

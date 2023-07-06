@@ -14,10 +14,6 @@ class UserController extends Controller
         return response()->json($users);
     }
 
-    public function create()
-    {
-        //
-    }
 
     // Menyimpan data user baru
     public function store(Request $request)
@@ -46,11 +42,7 @@ class UserController extends Controller
 
         return response()->json($user);
     }
-
-    public function edit(User $user)
-    {
-        //
-    }
+    
 
     // Mengupdate data user berdasarkan ID
     public function update(Request $request, User $id)

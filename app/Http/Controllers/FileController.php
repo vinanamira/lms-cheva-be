@@ -14,10 +14,6 @@ class FileController extends Controller
         return response()->json($files);
     }
 
-    public function create()
-    {
-        //
-    }
 
     // Menyimpan data file baru
     public function store(Request $request)
@@ -43,10 +39,6 @@ class FileController extends Controller
         return response()->json($file);
     }
 
-    public function edit(file $file)
-    {
-        //
-    }
 
     // Mengupdate data file berdasarkan ID
     public function update(Request $request, file $id)

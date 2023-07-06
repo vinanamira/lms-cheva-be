@@ -14,10 +14,6 @@ class RoleController extends Controller
         return response()->json($roles);
     }
 
-    public function create()
-    {
-        //
-    }
 
     // Menyimpan data role baru
     public function store(Request $request)
@@ -41,10 +37,6 @@ class RoleController extends Controller
         return response()->json($role);
     }
 
-    public function edit(Role $role)
-    {
-        //
-    }
 
     // Mengupdate data role berdasarkan ID
     public function update(Request $request, Role $id)

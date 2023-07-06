@@ -14,10 +14,6 @@ class SilabusController extends Controller
         return response()->json($silabus);
     }
 
-    public function create()
-    {
-        //
-    }
 
     // Menyimpan data silabus baru
     public function store(Request $request)
@@ -41,10 +37,6 @@ class SilabusController extends Controller
         return response()->json($silabus);
     }
 
-    public function edit(Silabus $silabus)
-    {
-        //
-    }
 
     // Mengupdate data silabus berdasarkan ID
     public function update(Request $request, Silabus $id)

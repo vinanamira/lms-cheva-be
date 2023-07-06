@@ -14,10 +14,6 @@ class TugasController extends Controller
         return response()->json($tugas);
     }
 
-    public function create()
-    {
-        //
-    }
 
     // Menyimpan data tugas baru
     public function store(Request $request)
@@ -46,10 +42,6 @@ class TugasController extends Controller
         return response()->json($tugas);
     }
 
-    public function edit(Tugas $tugas)
-    {
-        //
-    }
 
     // Mengupdate data tugas berdasarkan ID
     public function update(Request $request, Tugas $id)
