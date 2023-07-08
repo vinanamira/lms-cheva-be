@@ -11,6 +11,7 @@ class Silabus extends Model
     protected $table = 'silabus';
 
     protected $fillable = [
+        'user_mentor_id',
         'nama_silabus',
         'created_at',
         'updated_at'

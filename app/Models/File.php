@@ -11,7 +11,13 @@ class File extends Model
     protected $table = 'file';
 
     protected $fillable = [
-        'file',
+        'pengumpulan_id',
+        'materi_id',
+        'kategori_anggota',
+        'file_pengumpulan',
+        'kategori_mentor',
+        'file_materi',
+        'deskripsi',
         'created_at',
         'updated_at'
     ];

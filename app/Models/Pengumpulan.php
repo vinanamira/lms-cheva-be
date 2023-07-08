@@ -11,6 +11,8 @@ class Pengumpulan extends Model
     protected $table = 'pengumpulan';
 
     protected $fillable = [
+        'tugas_id',
+        'user_pengumpulan_id',
         'nilai_tugas',
         'created_at',
         'updated_at'

@@ -11,6 +11,7 @@ class Materi extends Model
     protected $table = 'materi';
 
     protected $fillable = [
+        'silabus_id',
         'nama_materi',
         'deskripsi',
         'created_at'

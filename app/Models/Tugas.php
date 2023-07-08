@@ -11,6 +11,7 @@ class Tugas extends Model
     protected $table = 'tugas';
 
     protected $fillable = [
+        'silabus_id',
         'nama_tugas',
         'deskripsi_tugas',
         'deadline_tugas',
