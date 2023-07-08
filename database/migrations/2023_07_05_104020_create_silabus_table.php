@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('silabus', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("user_mentor_id")->nullable();
             $table->string('nama_silabus');
             $table->timestamps();
         });

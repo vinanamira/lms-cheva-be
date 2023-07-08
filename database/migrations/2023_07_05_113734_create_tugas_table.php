@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('tugas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("silabus_id");
             $table->string('nama_tugas');
             $table->string('deskripsi_tugas');
+            $table->date("deadline_tugas");
             $table->date('overdue');
             $table->timestamps();
         });

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('divisis', function (Blueprint $table) {
+        Schema::create('divisi', function (Blueprint $table) {
             $table->id();
             $table->string('nama_divisi');
             $table->timestamps();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('divisis');
+        Schema::dropIfExists('divisi');
     }
 };
