@@ -24,9 +24,12 @@ class DivisiController extends Controller
         $divisi->updated_at = now();
         $divisi->save();
 
-    return response()->json(['message' => 'Divisi created successfully']);
+        return response()->json([
+            'message' => 'Divisi created successfully',
+            "data" => $divisi
+        ]);
     }
- 
+
     // Menampilkan data file berdasarkan ID
     public function show(Divisi $id)
     {
@@ -36,7 +39,10 @@ class DivisiController extends Controller
             return response()->json(['message' => 'Divisi not found'], 404);
         }
 
-    return response()->json($divisi);
+        return response()->json([
+            "message" => "Divisi show successfully",
+            "data" => $divisi
+        ]);
     }
 
     // Mengupdate data file berdasarkan ID
@@ -54,7 +60,10 @@ class DivisiController extends Controller
         $divisi->updated_at = now();
         $divisi->save();
 
-        return response()->json(['message' => 'Divisi updated successfully']);
+        return response()->json([
+            'message' => 'Divisi updated successfully',
+            "data" => $divisi
+        ]);
     }
 
     // Menghapus data file berdasarkan ID

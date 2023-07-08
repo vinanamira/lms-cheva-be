@@ -11,7 +11,10 @@ class FileController extends Controller
     public function index()
     {
         $files = File::all();
-        return response()->json($files);
+        return response()->json([
+            "message" => "get all file successfully",
+            "data" => $files
+        ]);
     }
 
 
@@ -24,7 +27,10 @@ class FileController extends Controller
         $file->updated_at = now();
         $file->save();
 
-        return response()->json(['message' => 'File created successfully']);
+        return response()->json([
+            'message' => 'File created successfully',
+            'data' => $file
+        ]);
     }
 
     // Menampilkan data file berdasarkan ID
@@ -36,7 +42,10 @@ class FileController extends Controller
             return response()->json(['message' => 'File not found'], 404);
         }
 
-        return response()->json($file);
+        return response()->json([
+            'message' => 'File show successfully',
+            'data' => $file
+        ]);
     }
 
 
@@ -53,7 +62,10 @@ class FileController extends Controller
         $file->updated_at = now();
         $file->save();
 
-        return response()->json(['message' => 'File updated successfully']);
+        return response()->json([
+            'message' => 'File updated successfully',
+            'data' => $file
+        ]);
     }
 
     // Menghapus data file berdasarkan ID
