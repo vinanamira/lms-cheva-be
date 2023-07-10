@@ -9,6 +9,7 @@ class Role extends Model
 {
     use HasFactory;
 
+    public const ADMIN = "admin";
     public const MENTOR = "mentor";
     public const MURID = "murid";
 

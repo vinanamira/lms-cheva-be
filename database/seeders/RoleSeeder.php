@@ -25,6 +25,11 @@ class RoleSeeder extends Seeder
                 'nama_role' => Role::MURID,
                 'created_at' => now(),
                 'updated_at' => now()
+            ],
+            [
+                'nama_role' => Role::ADMIN,
+                'created_at' => now(),
+                'updated_at' => now()
             ]
         ]);
     }
