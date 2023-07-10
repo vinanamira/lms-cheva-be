@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     use HasFactory;
+
+    public const MENTOR = "mentor";
+    public const MURID = "murid";
+
     protected $table = 'role';
 
     protected $fillable = [
