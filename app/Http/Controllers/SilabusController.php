@@ -11,18 +11,29 @@ class SilabusController extends Controller
     public function index()
     {
         $silabus = Silabus::all();
-        return response()->json($silabus);
+        return response()->json([
+            'message' => 'Silabus get all successfully',
+            'data' => $silabus
+        ]);
     }
 
 
     // Menyimpan data silabus baru
     public function store(Request $request)
     {
+        $request->validate([
+            'nama_silabus' => 'required',
+        ]);
+
         $silabus = new Silabus();
+        $silabus->user_mentor_id = auth()->user()->id;
         $silabus->nama_silabus = $request->nama_silabus;
         $silabus->save();
 
-        return response()->json(['message' => 'Silabus created successfully']);
+        return response()->json([
+            'message' => 'Silabus created successfully',
+            'data' => $silabus
+        ]);
     }
 
     // Menampilkan data silabus berdasarkan ID
@@ -34,14 +45,21 @@ class SilabusController extends Controller
             return response()->json(['message' => 'Silabus not found'], 404);
         }
 
-        return response()->json($silabus);
+        return response()->json([
+            'message' => 'Silabus get data by id successfully',
+            'data' => $silabus
+        ]);
     }
 
 
     // Mengupdate data silabus berdasarkan ID
     public function update(Request $request, Silabus $id)
     {
-        $silabus = Silabus::find($id);
+        $request->validate([
+            'nama_silabus' => 'required',
+        ]);
+
+        $silabus = Silabus::find($id)->first();
 
         if (!$silabus) {
             return response()->json(['message' => 'Silabus not found'], 404);
@@ -56,7 +74,7 @@ class SilabusController extends Controller
     // Menghapus data silabus berdasarkan ID
     public function destroy(Silabus $id)
     {
-        $silabus = Silabus::find($id);
+        $silabus = Silabus::find($id)->first();
 
         if (!$silabus) {
             return response()->json(['message' => 'Silabus not found'], 404);
