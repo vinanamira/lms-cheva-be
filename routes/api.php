@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DivisiController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\MentorController;
+use App\Http\Controllers\MuridController;
 use App\Http\Controllers\PengumpulanController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SilabusController;
@@ -59,6 +60,13 @@ Route::middleware('api')->group(function () {
             Route::get('/tugas/{id}', [TugasController::class, 'show']);
             Route::put('/tugas/{id}', [TugasController::class, 'update']);
             Route::delete('/tugas/{id}', [TugasController::class, 'destroy']);
+
+            Route::get('/murid', [MuridController ::class, 'index']);
+            Route::get('/murid/{user_id}', [MuridController ::class, 'show']);
+            Route::post('/murid', [MuridController ::class, 'store']);
+            Route::put('/murid/{user_id}', [MuridController ::class, 'edit']);
+            Route::put('/murid/{user_id}/change-password', [MuridController ::class, 'changePassword']);
+            Route::delete('/murid/{user_id}', [MuridController ::class, 'destroy']);
         });
     });
 

@@ -66,13 +66,6 @@ class MentorController extends Controller
 
     public function edit(Request $request, $mentorId)
     {
-        $request->validate([
-            'divisi_id' => 'required|exists:divisi,id',
-            'fullname' => 'required',
-            'username' => 'required|unique:user,username',
-            'email' => 'required|email',
-        ]);
-
         $role_id = Role::where('nama_role', Role::MENTOR)->first();
         $user = User::where('role_id', $role_id->id)->where('id', $mentorId)->first();
 
@@ -81,6 +74,13 @@ class MentorController extends Controller
                 'message' => 'Mentor not found'
             ], 404);
         }
+
+        $request->validate([
+            'divisi_id' => 'required|exists:divisi,id',
+            'fullname' => 'required',
+            'username' => 'required|unique:user,username,'.$user->id,
+            'email' => 'required|email',
+        ]);
 
         $user->update([
             'divisi_id' => $request->divisi_id,
