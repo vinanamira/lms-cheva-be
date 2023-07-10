@@ -19,8 +19,21 @@ class UserSeeder extends Seeder
     {
         $mentorRole = Role::where('nama_role', Role::MENTOR)->first();
         $muridRole = Role::where('nama_role', Role::MURID)->first();
+        $adminRole = Role::where('nama_role', Role::ADMIN)->first();
+
         $divisi = Divisi::create([
             'nama_divisi' => 'coba divisi',
+        ]);
+
+        $userAdmin = User::create([
+            'role_id' => $adminRole->id,
+            'divisi_id' => $divisi->id,
+            'user_mentor_id' => null,
+            'photo_profile' => null,
+            'fullname' => 'admin',
+            'username' => 'admin',
+            'email' => 'admin@app.com',
+            'password' => bcrypt('password'),
         ]);
 
         $userMentor = User::create([
