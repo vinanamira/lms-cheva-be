@@ -52,6 +52,13 @@ Route::middleware('api')->group(function () {
             Route::get('/materi/{id}', [MateriController::class, 'show']);
             Route::put('/materi/{id}', [MateriController::class, 'update']);
             Route::delete('/materi/{id}', [MateriController::class, 'destroy']);
+
+            // Routes untuk entitas Tugas
+            Route::get('/tugas', [TugasController::class, 'index']);
+            Route::post('/tugas', [TugasController::class, 'store']);
+            Route::get('/tugas/{id}', [TugasController::class, 'show']);
+            Route::put('/tugas/{id}', [TugasController::class, 'update']);
+            Route::delete('/tugas/{id}', [TugasController::class, 'destroy']);
         });
     });
 
@@ -68,13 +75,6 @@ Route::middleware('api')->group(function () {
     Route::get('/role/{id}', [RoleController::class, 'show']);
     Route::put('/role/{id}', [RoleController::class, 'update']);
     Route::delete('/role/{id}', [RoleController::class, 'destroy']);
-
-    // Routes untuk entitas Tugas
-    Route::get('/tugas', [TugasController::class, 'index']);
-    Route::post('/tugas', [TugasController::class, 'store']);
-    Route::get('/tugas/{id}', [TugasController::class, 'show']);
-    Route::put('/tugas/{id}', [TugasController::class, 'update']);
-    Route::delete('/tugas/{id}', [TugasController::class, 'destroy']);
 
     // Routes untuk entitas User
     Route::get('/user', [UserController::class, 'index']);
