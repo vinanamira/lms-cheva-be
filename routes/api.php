@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DivisiController;
@@ -11,12 +12,23 @@ use App\Http\Controllers\TugasController;
 use App\Http\Controllers\UserController;
 
 Route::middleware('api')->group(function () {
-    // Routes untuk entitas Divisi
-    Route::get('/divisi', [DivisiController::class, 'index']);
-    Route::post('/divisi', [DivisiController::class, 'store']);
-    Route::get('/divisi/{id}', [DivisiController::class, 'show']);
-    Route::put('/divisi/{id}', [DivisiController::class, 'update']);
-    Route::delete('/divisi/{id}', [DivisiController::class, 'destroy']);
+    Route::post('auth/login', [AuthController::class, 'login']);
+
+    Route::group(['middleware' => ['auth:sanctum']], function () {
+        Route::group(['prefix' => 'auth'], function () {
+            Route::get('/user', [AuthController::class, 'user']);
+            Route::post('/logout', [AuthController::class, 'logout']);
+        });
+
+        Route::group(['middleware' => 'admin'], function () {
+            // Routes untuk entitas Divisi
+            Route::get('/divisi', [DivisiController::class, 'index']);
+            Route::post('/divisi', [DivisiController::class, 'store']);
+            Route::get('/divisi/{id}', [DivisiController::class, 'show']);
+            Route::put('/divisi/{id}', [DivisiController::class, 'update']);
+            Route::delete('/divisi/{id}', [DivisiController::class, 'destroy']);
+        });
+    });
 
     // Routes untuk entitas Materi
     Route::get('/materi', [MateriController::class, 'index']);
