@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DivisiController;
 use App\Http\Controllers\MateriController;
+use App\Http\Controllers\MentorController;
 use App\Http\Controllers\PengumpulanController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SilabusController;
@@ -27,6 +28,14 @@ Route::middleware('api')->group(function () {
             Route::get('/divisi/{id}', [DivisiController::class, 'show']);
             Route::put('/divisi/{id}', [DivisiController::class, 'update']);
             Route::delete('/divisi/{id}', [DivisiController::class, 'destroy']);
+
+            // Routes untuk entitas Mentor
+            Route::get('/mentor', [MentorController ::class, 'index']);
+            Route::get('/mentor/{user_id}', [MentorController ::class, 'show']);
+            Route::post('/mentor', [MentorController ::class, 'store']);
+            Route::put('/mentor/{user_id}', [MentorController ::class, 'edit']);
+            Route::put('/mentor/{user_id}/change-password', [MentorController ::class, 'changePassword']);
+            Route::delete('/mentor/{user_id}', [MentorController ::class, 'destroy']);
         });
     });
 
