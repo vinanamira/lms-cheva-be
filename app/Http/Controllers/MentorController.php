@@ -52,6 +52,12 @@ class MentorController extends Controller
         $role_id = Role::where('nama_role', Role::MENTOR)->first();
         $user = User::where('role_id', $role_id->id)->where('id', $mentorId)->first();
 
+        if(!$user){
+            return response()->json([
+                'message' => 'Mentor not found'
+            ], 404);
+        }
+
         return response()->json([
             'message' => 'Show mentor successfully',
             'data' => $user

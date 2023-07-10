@@ -22,13 +22,6 @@ Route::middleware('api')->group(function () {
         });
 
         Route::group(['middleware' => 'admin'], function () {
-            // Routes untuk entitas Divisi
-            Route::get('/divisi', [DivisiController::class, 'index']);
-            Route::post('/divisi', [DivisiController::class, 'store']);
-            Route::get('/divisi/{id}', [DivisiController::class, 'show']);
-            Route::put('/divisi/{id}', [DivisiController::class, 'update']);
-            Route::delete('/divisi/{id}', [DivisiController::class, 'destroy']);
-
             // Routes untuk entitas Mentor
             Route::get('/mentor', [MentorController ::class, 'index']);
             Route::get('/mentor/{user_id}', [MentorController ::class, 'show']);
@@ -36,6 +29,22 @@ Route::middleware('api')->group(function () {
             Route::put('/mentor/{user_id}', [MentorController ::class, 'edit']);
             Route::put('/mentor/{user_id}/change-password', [MentorController ::class, 'changePassword']);
             Route::delete('/mentor/{user_id}', [MentorController ::class, 'destroy']);
+        });
+
+        Route::group(['middleware' => 'mentor'], function () {
+            // Routes untuk entitas Divisi
+            Route::get('/divisi', [DivisiController::class, 'index']);
+            Route::post('/divisi', [DivisiController::class, 'store']);
+            Route::get('/divisi/{id}', [DivisiController::class, 'show']);
+            Route::put('/divisi/{id}', [DivisiController::class, 'update']);
+            Route::delete('/divisi/{id}', [DivisiController::class, 'destroy']);
+
+            // Routes untuk entitas Silabus
+            Route::get('/silabus', [SilabusController::class, 'index']);
+            Route::post('/silabus', [SilabusController::class, 'store']);
+            Route::get('/silabus/{id}', [SilabusController::class, 'show']);
+            Route::put('/silabus/{id}', [SilabusController::class, 'update']);
+            Route::delete('/silabus/{id}', [SilabusController::class, 'destroy']);
         });
     });
 
@@ -59,13 +68,6 @@ Route::middleware('api')->group(function () {
     Route::get('/role/{id}', [RoleController::class, 'show']);
     Route::put('/role/{id}', [RoleController::class, 'update']);
     Route::delete('/role/{id}', [RoleController::class, 'destroy']);
-
-    // Routes untuk entitas Silabus
-    Route::get('/silabus', [SilabusController::class, 'index']);
-    Route::post('/silabus', [SilabusController::class, 'store']);
-    Route::get('/silabus/{id}', [SilabusController::class, 'show']);
-    Route::put('/silabus/{id}', [SilabusController::class, 'update']);
-    Route::delete('/silabus/{id}', [SilabusController::class, 'destroy']);
 
     // Routes untuk entitas Tugas
     Route::get('/tugas', [TugasController::class, 'index']);
