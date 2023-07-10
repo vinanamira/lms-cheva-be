@@ -45,15 +45,15 @@ Route::middleware('api')->group(function () {
             Route::get('/silabus/{id}', [SilabusController::class, 'show']);
             Route::put('/silabus/{id}', [SilabusController::class, 'update']);
             Route::delete('/silabus/{id}', [SilabusController::class, 'destroy']);
+
+            // Routes untuk entitas Materi
+            Route::get('/materi', [MateriController::class, 'index']);
+            Route::post('/materi', [MateriController::class, 'store']);
+            Route::get('/materi/{id}', [MateriController::class, 'show']);
+            Route::put('/materi/{id}', [MateriController::class, 'update']);
+            Route::delete('/materi/{id}', [MateriController::class, 'destroy']);
         });
     });
-
-    // Routes untuk entitas Materi
-    Route::get('/materi', [MateriController::class, 'index']);
-    Route::post('/materi', [MateriController::class, 'store']);
-    Route::get('/materi/{id}', [MateriController::class, 'show']);
-    Route::put('/materi/{id}', [MateriController::class, 'update']);
-    Route::delete('/materi/{id}', [MateriController::class, 'destroy']);
 
     // Routes untuk entitas Pengumpulan
     Route::get('/pengumpulan', [PengumpulanController::class, 'index']);
