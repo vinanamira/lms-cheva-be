@@ -18,16 +18,18 @@ class DivisiController extends Controller
     // Menyimpan data file baru
     public function store(Request $request)
     {
+        $request->validate([
+            'nama_divisi' => 'required',
+        ]);
+
         $divisi = new Divisi();
         $divisi->nama_divisi = $request->nama_divisi;
-        $divisi->created_at = now();
-        $divisi->updated_at = now();
         $divisi->save();
 
         return response()->json([
             'message' => 'Divisi created successfully',
             "data" => $divisi
-        ]);
+        ], 201);
     }
 
     // Menampilkan data file berdasarkan ID
@@ -48,13 +50,12 @@ class DivisiController extends Controller
     // Mengupdate data file berdasarkan ID
     public function update(Request $request, Divisi $id)
     {
-        $divisi = Divisi::find($id);
+        $divisi = Divisi::find($id)->first();
 
         if (!$divisi) {
             return response()->json(['message' => 'Divisi not found'], 404);
         }
 
-        $divisi = new Divisi();
         $divisi->nama_divisi = $request->nama_divisi;
         $divisi->created_at = now();
         $divisi->updated_at = now();
@@ -69,7 +70,7 @@ class DivisiController extends Controller
     // Menghapus data file berdasarkan ID
     public function destroy(Divisi $id)
     {
-        $divisi = Divisi::find($id);
+        $divisi = Divisi::find($id)->first();
 
         if (!$divisi) {
             return response()->json(['message' => 'Divisi not found'], 404);
