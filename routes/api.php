@@ -14,7 +14,7 @@ use App\Http\Controllers\TugasController;
 use App\Http\Controllers\UserController;
 
 Route::middleware('api')->group(function () {
-    Route::post('auth/login', [AuthController::class, 'login']);
+    Route::post('auth/login', [AuthController::class, 'login'])->name('login');
 
     Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::group(['prefix' => 'auth'], function () {
