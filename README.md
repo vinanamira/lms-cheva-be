@@ -24,7 +24,7 @@ Here's link API Documentation: https://documenter.getpostman.com/view/28796164/2
 
 <h2 id="colab">🤝 Collaborators</h2>
 
-Special thank you for mentor that contributed for this project.
+Special thanks to the mentors who have helped me to work on this project.
 
 <table>
   <tr>
