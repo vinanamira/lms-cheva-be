@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-    <b>Learning Management System (LMS) Cheva is a learning app, especially for members of Chevalier.Learning Management System (LMS) Cheva is a learning app, especially for members of Chevalier.</b>
+    <b>Learning Management System (LMS) Cheva is a learning app, especially for members of Chevalier.</b>
 </p>
 
 <h2 id="technologies">💻 Technoogies</h2>
@@ -29,7 +29,7 @@ Special thank you for mentor that contributed for this project.
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/mrzf833">
+      <a href="https://github.com/mrzf833" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/45997345?v=4" width="100px;" alt=" Zulfa Iniko Falaq Profile Picture"/><br>
         <sub>
           <b>Zulfa Iniko Falaq </b>
