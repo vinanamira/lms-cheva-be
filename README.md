@@ -1,7 +1,7 @@
 <h1 align="center" style="font-weight: bold;">LMS Cheva💻</h1>
 
 <p align="center">
- <a href="#technologies">Teknologi</a> • 
+ <a href="#technologies">Technologies</a> • 
  <a href="#routes">API Documentation</a> •
  <a href="#colab">Collaborators</a> •
 <!--  <a href="#started">Getting Started</a> • 
@@ -12,7 +12,7 @@
     <b>Learning Management System (LMS) Cheva is a learning app, especially for members of Chevalier.</b>
 </p>
 
-<h2 id="technologies">💻 Technoogies</h2>
+<h2 id="technologies">💻 Technologies</h2>
 
 - Laravel
 - PHP
