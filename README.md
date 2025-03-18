@@ -20,7 +20,7 @@
 
 <h2 id="routes">📍 API Endpoints</h2>
 
-Here's link API Documentation: https://documenter.getpostman.com/view/28796164/2sA2xh1s3R.
+Here's link API Documentation: https://documenter.getpostman.com/view/28796164/2sAY55bJec.
 
 <h2 id="colab">🤝 Collaborators</h2>
 
